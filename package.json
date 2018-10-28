@@ -22,11 +22,12 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "test": "npm run eslint && NODE_ENV= npm run mocha",
+    "test": "npm run eslint && cypress run --browser chrome",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "dev": "nodemon src/",
     "start": "node src/",
-    "mocha": "mocha test/ --recursive --exit"
+    "mocha": "mocha test/ --recursive --exit",
+    "ci": "server-test start http://localhost:3030/index.html"
   },
   "dependencies": {
     "@feathersjs/configuration": "^2.0.4",
@@ -46,6 +47,7 @@
     "mocha": "^5.2.0",
     "nodemon": "^1.18.5",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "start-server-and-test": "^1.7.5"
   }
 }

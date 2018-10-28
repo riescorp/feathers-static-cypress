@@ -12,7 +12,7 @@ feathers generate app
 ```
 
 
-npm install cypress --save-dev
+npm install cypress start-server-and-test --save-dev
 
 
 
