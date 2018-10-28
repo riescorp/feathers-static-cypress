@@ -1,0 +1,23 @@
+defaults: &defaults
+  working_directory: ~/app
+  docker:
+    - image: cypress/browsers:chrome67
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm ci
+      - run: 
+          name: Run it!
+          command: npm run ci
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
